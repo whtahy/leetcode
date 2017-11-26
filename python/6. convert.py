@@ -1,5 +1,5 @@
 # Credit to @DazzlingHelios:
-# https://discuss.leetcode.com/topic/34573/python-o-n-solution-in-96ms-99-43
+# https://discuss.leetcode.com/post/36258
 class Solution:
     def convert(self, s, n):
         if n <= 1 or len(s) < n:
