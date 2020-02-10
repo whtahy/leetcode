@@ -4,8 +4,8 @@ class Solution:
             return sum(nums)
 
         nums.sort()
-        l = len(nums)
 
+        l = len(nums)
         ans = None
         best = math.inf
 
