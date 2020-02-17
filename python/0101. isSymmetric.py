@@ -28,10 +28,7 @@ class Solution:
 # recursive
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:
-        if not root:
-            return True
-
-        return Solution.helper(root.left, root.right)
+        return not root or Solution.helper(root.left, root.right)
 
     def helper(p, q):
         if p and q:
