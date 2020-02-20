@@ -12,7 +12,7 @@ class Solution:
         q = collections.deque([root]) if root else None
         while q:
             level += 1
-            for i in range(len(q)):
+            for _ in range(len(q)):
                 node = q.popleft()
                 if node.left:
                     q.append(node.left)
