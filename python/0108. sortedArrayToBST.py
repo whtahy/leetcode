@@ -35,6 +35,7 @@ class Solution:
         while parents:
             p = parents.popleft()
 
+            # left
             a, b = children.popleft()
             i = (a + b) // 2
             children.append((a, i-1))
@@ -44,6 +45,7 @@ class Solution:
                 p.left = TreeNode(nums[i])
                 parents.append(p.left)
 
+            # right
             a, b = children.popleft()
             i = (a + b) // 2
             children.append((a, i-1))
