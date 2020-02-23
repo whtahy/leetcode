@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 
+# recursive
 class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
         def helper(a, b):
@@ -17,3 +18,39 @@ class Solution:
             return node
 
         return helper(0, len(nums)-1) if nums else None
+
+# iterative
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        if not nums:
+            return None
+
+        m = len(nums) - 1
+        i = m // 2
+        root = TreeNode(nums[i])
+
+        parents = collections.deque([root])
+        children = collections.deque([(0, i-1), (i+1, m)])
+
+        while parents:
+            p = parents.popleft()
+
+            a, b = children.popleft()
+            i = (a + b) // 2
+            children.append((a, i-1))
+            children.append((i+1, b))
+
+            if a <= b:
+                p.left = TreeNode(nums[i])
+                parents.append(p.left)
+
+            a, b = children.popleft()
+            i = (a + b) // 2
+            children.append((a, i-1))
+            children.append((i+1, b))
+
+            if a <= b:
+                p.right = TreeNode(nums[i])
+                parents.append(p.right)
+
+        return root
