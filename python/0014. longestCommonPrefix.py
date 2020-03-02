@@ -1,18 +1,31 @@
-# credit to @cassandra9
-# https://discuss.leetcode.com/post/29598
+# vertical scan
 class Solution:
-    def longestCommonPrefix(self, ls):
-        if len(ls) == 0:
-            return ''
-
-        q = sorted(ls)
-        x,y = q[0], q[-1]
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
 
         i = 0
-        for a,b in zip(x,y):
-            if a == b:
-                i += 1
-            else:
+        for x in zip(*strs):
+            if not all(x[0] == y for y in x[1:]):
                 break
+            else:
+                i += 1
 
-        return x[0:i]
+        return strs[0][:i]
+
+# sort: credit to https://leetcode.com/cassandra9/
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+
+        strs.sort()
+
+        i = 0
+        for x, y in zip(strs[0], strs[-1]):
+            if x != y:
+                break
+            else:
+                i += 1
+
+        return strs[0][:i]
