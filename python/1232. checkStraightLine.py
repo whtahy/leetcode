@@ -7,12 +7,12 @@ class Solution:
             return math.inf
         else:
             return delta_y / delta_x
-        
+
     def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
         n = len(coordinates)
-        
+
         if n == 2:
             return True
-        
+
         m = Solution.slope(coordinates[0], coordinates[-1])
         return all(m == Solution.slope(coordinates[i], coordinates[i+1]) for i in range(0, n-1, 2))
