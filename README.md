@@ -1,6 +1,6 @@
 # LeetCode
 
-Problems and solutions available at: https://leetcode.com/problemset/all/
+Problems and solutions available at https://leetcode.com/problemset/all/
 
 Thanks to [Stefan Pochmann](https://leetcode.com/StefanPochmann/) and the entire leetcode community for sharing their solutions!
 
