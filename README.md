@@ -1,8 +1,8 @@
 # LeetCode
 
-Problems and solutions available at:
+Problems and solutions available at: https://leetcode.com/problemset/all/
 
-https://leetcode.com/problemset/all/
+Thanks to [Stefan Pochmann](https://leetcode.com/StefanPochmann/) and the entire leetcode community for sharing their solutions!
 
 
 # License
