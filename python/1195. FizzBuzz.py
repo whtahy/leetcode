@@ -28,19 +28,19 @@ class FizzBuzz:
                 self.number_lock.release()
 
     def fizzbuzz(self, printFizzBuzz: 'Callable[[], None]') -> None:
-        for x in range(self.n//15):
+        for _ in range(self.n//15):
             self.fizzbuzz_lock.acquire()
             printFizzBuzz()
             self.number_lock.release()
 
     def fizz(self, printFizz: 'Callable[[], None]') -> None:
-        for x in range(self.n//3 - self.n//15):
+        for _ in range(self.n//3 - self.n//15):
             self.fizz_lock.acquire()
             printFizz()
             self.number_lock.release()
 
     def buzz(self, printBuzz: 'Callable[[], None]') -> None:
-        for x in range(self.n//5 - self.n//15):
+        for _ in range(self.n//5 - self.n//15):
             self.buzz_lock.acquire()
             printBuzz()
             self.number_lock.release()
