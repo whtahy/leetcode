@@ -1,7 +1,8 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        buy = profit = 0
-        for price in enumerate(prices):
+        profit = 0
+        buy = math.inf
+        for price in prices:
             if price < buy:
                 buy = price
             elif (p := price - buy) > profit:
