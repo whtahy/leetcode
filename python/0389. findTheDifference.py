@@ -1,22 +1,20 @@
-# dict
+# 1 Counter
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        d = defaultdict(int)
-        for ch in s:
-            d[ch] += 1
+        c = Counter(s)
         for ch in t:
-            d[ch] -= 1
-            if d[ch] < 0:
+            if c[ch] == 0:
                 return ch
+            c[ch] -= 1
 
-# Counter
+# 2 Counters
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
         s = Counter(s)
         t = Counter(t)
         return next(iter(t - s))
 
-# sort
+# 2 sorts
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
         s = sorted(s)
